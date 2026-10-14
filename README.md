@@ -12,3 +12,4 @@
 2. 启动软件，用户界面选择“分栏用户界面”（即 Columns UI）
 3. 在 Columns UI 的设置里导入 `[FOOBAR_PROFILE_DIRECTORY]\themes\eole\columnsUI_eole.fcl`
 4. 在 Shpeck 中配置 Winamp 目录以进行可视化（`File` > `Preferences` > `Visualisations` > `Shpeck`）。点击右上角的 `...` 按钮可以浏览并选择目录 `[FOOBAR_PROFILE_DIRECTORY]\plugins\winamp`
+   【 Shpeck已替换成mpv，需安装foo_mpv插件。】
