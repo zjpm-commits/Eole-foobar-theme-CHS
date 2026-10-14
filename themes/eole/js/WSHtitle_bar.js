@@ -2827,7 +2827,7 @@ oSearch = function() {
 		}
 	};
 	this.on_init = function() {
-		this.inputbox = new oInputbox(this.w, this.h, "", "搜索...", colors.search_txt , 0, 0, colors.selected_bg, g_launchSearch, "g_searchbox", undefined, "g_font.min2");
+		this.inputbox = new oInputbox(this.w, this.h, "", "搜索...", colors.search_txt , 0, 0, colors.selected_bg, g_launchSearch, "g_searchbox", undefined, "g_font.normal");
         this.inputbox.autovalidation = properties.autosearch;
 		this.adapt_look_to_layout();
     };
