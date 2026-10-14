@@ -528,7 +528,7 @@ function build_buttons(){
 				main_panel_state.setValue(2);
 				get_colors();g_searchbox.adapt_look_to_layout();
 			}, false,false,images.artist_bio_img,images.artist_bio_img,2, false, false, true,(compact_titlebar.isEqual(2)?g_font.plus1:g_font.normal)),
-			Visualization: new JSButton(btn.left_m+btn.width+btn.width+btn.width+btn.margin*3, btn.top_m, btn.width, btn.height, "可视化", "可视化", "", function () {
+			Visualization: new JSButton(btn.left_m+btn.width+btn.width+btn.width+btn.margin*3, btn.top_m, btn.width, btn.height, "视频播放", "视频播放", "", function () {
 				main_panel_state.setValue(3);
 				get_colors();g_searchbox.adapt_look_to_layout();
 			}, false,false,images.visualization_img,images.visualization_img,3, false, false, true,(compact_titlebar.isEqual(2)?g_font.plus1:g_font.normal)),
@@ -1032,7 +1032,7 @@ function on_mouse_rbtn_up(x, y){
 			_menu.AppendMenuItem(MF_STRING, 1, "媒体库");
 			_menu.AppendMenuItem(MF_STRING, 2, "播放列表");
 			_menu.AppendMenuItem(MF_STRING, 3, "当前播放");
-			if(properties.show_visualization) _menu.AppendMenuItem(MF_STRING, 4, "可视化");
+			if(properties.show_visualization) _menu.AppendMenuItem(MF_STRING, 4, "视频播放");
 			_menu.CheckMenuRadioItem(1, 4, (parseInt(main_panel_state.value)+1));
 			_menu.AppendMenuSeparator();
 			_menu.AppendMenuItem(MF_STRING, 6, "Mini 播放器");
@@ -1124,7 +1124,7 @@ function draw_settings_menu(x,y){
 		_menu.AppendMenuItem(MF_STRING, 1900, "启动时恢复面板状态");
 		_menu.CheckMenuItem(1900, properties.Remember_previous_state)
 
-		_menu.AppendMenuItem(MF_STRING, 1901, "隐藏可视化面板");
+		_menu.AppendMenuItem(MF_STRING, 1901, "隐藏视频播放面板");
 		_menu.CheckMenuItem(1901, !properties.show_visualization)
 
 		_menu.AppendMenuSeparator();
@@ -1435,7 +1435,7 @@ function draw_layout_menu(x,y){
 		wallpaper_visibility.AppendTo(basemenu,MF_STRING, "壁纸显示");
 		wallpaper_blur.AppendTo(basemenu,MF_STRING, "壁纸模糊");
 	} else if(main_panel_state.isEqual(3)){
-		basemenu.AppendMenuItem(MF_GRAYED, 0, "可视化布局");
+		basemenu.AppendMenuItem(MF_GRAYED, 0, "视频播放布局");
 		basemenu.AppendMenuSeparator();				
 		nowplaying.AppendTo(basemenu,MF_STRING, "右侧播放列表");
 		basemenu.AppendMenuSeparator();
@@ -3006,7 +3006,7 @@ function on_init(){
 	if(fb.IsPlaying) caption_title = fb.TitleFormat("[%artist%  -  ][%album%[  -  %tracknumber%] : ]%title%[  -  %date%]").Eval();
 	if(settings_file_not_found){
 		var welcome_msg_timer = setTimeout(function(){
-			chooseMemorySettings(" ", "<div class='titleBig'>您是否第一次安装这个主题?</div><div class='separator'></div><br/>fcl 主题文件路径> foobar2000>themes>eole>columnsUI_eole.fcl\n可视化默认路径> C:>Program Files (x86)>foobar2000>plugins>winamp\n请仔细阅读弹出窗口, 特别是底部文字, 以了解 Eole 图像缓存的工作原理.\n\n下面的设置影响皮肤的性能, 封面分辨率和内存占用率.\n\n如果遇到性能问题或内存不足的错误\n可以通过进入 Foobar > 皮肤设置 > 封面 & 内存使用率 来降低. 反之, 如果一切工作正常, 那么可以提高. 如果不了解详细情况, 请保持默认设置.",'<br/>提示: 大多数面板都有一个设置菜单可通过点击右键获得.<br/><br/>注意: Eole 使用封面缓存. 封面缓存是逐渐建立起来的: 当显示一个封面时, 如果这时还没有建立缓存, 将被添加到缓存中, 所以第一次显示封面都会有些缓慢, 但第二次显示时将会变快很多.<br/><br/>这个缓存基于 %album artist% & %album% 标签.<br/><br/>如果更新现有封面, 需要刷新缓存. 在封面上点击右键, 会弹出一个相关的菜单项.<br/><br/>','MemoryDialog','可以减少内存中储存封面的宽度, 如下所示. 数字越低, 皮肤内存占用就越低. 注意: 如果减少太多, 封面看起来会很模糊.');
+			chooseMemorySettings(" ", "<div class='titleBig'>您是否第一次安装这个主题?</div><div class='separator'></div><br/>fcl 主题文件路径> foobar2000>themes>eole>columnsUI_eole.fcl\n视频播放默认路径> C:>Program Files (x86)>foobar2000>plugins>winamp\n请仔细阅读弹出窗口, 特别是底部文字, 以了解 Eole 图像缓存的工作原理.\n\n下面的设置影响皮肤的性能, 封面分辨率和内存占用率.\n\n如果遇到性能问题或内存不足的错误\n可以通过进入 Foobar > 皮肤设置 > 封面 & 内存使用率 来降低. 反之, 如果一切工作正常, 那么可以提高. 如果不了解详细情况, 请保持默认设置.",'<br/>提示: 大多数面板都有一个设置菜单可通过点击右键获得.<br/><br/>注意: Eole 使用封面缓存. 封面缓存是逐渐建立起来的: 当显示一个封面时, 如果这时还没有建立缓存, 将被添加到缓存中, 所以第一次显示封面都会有些缓慢, 但第二次显示时将会变快很多.<br/><br/>这个缓存基于 %album artist% & %album% 标签.<br/><br/>如果更新现有封面, 需要刷新缓存. 在封面上点击右键, 会弹出一个相关的菜单项.<br/><br/>','MemoryDialog','可以减少内存中储存封面的宽度, 如下所示. 数字越低, 皮肤内存占用就越低. 注意: 如果减少太多, 封面看起来会很模糊.');
 			theme_version.setValue(globalProperties.theme_version);
 			clearTimeout(welcome_msg_timer);
 			welcome_msg_timer=false;
