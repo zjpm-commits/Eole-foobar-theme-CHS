@@ -23,8 +23,8 @@ var last_mouse_move_notified = (new Date).getTime();
 var foo_playcount = utils.CheckComponent("foo_playcount", true);
 var timers = []
 var globalProperties = {
-	theme_version: '1.2.3b24',
-	lastest_breaking_version: '1.2.3b20',
+	theme_version: '1.2.3b25',
+	lastest_breaking_version: '1.2.3b24',
     thumbnailWidthMax: window.GetProperty("GLOBAL thumbnail width max", 200),
     coverCacheWidthMax: window.GetProperty("GLOBAL cover cache width max", 400),
 	TextRendering: 4,
@@ -518,7 +518,7 @@ function get_colors_global(){
 		colors.wallpaper_overlay_blurred = GetGrey(25,200);
 
 		colors.normal_txt = darkcolors.normal_txt;
-		colors.faded_txt = GetGrey(110);
+		colors.faded_txt = GetGrey(140);
 		colors.superfaded_txt = GetGrey(60);
 		colors.full_txt = GetGrey(255);
 
